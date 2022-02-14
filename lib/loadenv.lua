@@ -3,13 +3,12 @@
 local LuaHelper = require('LuaHelper')
 local trim  = require('text').trim
 local loadenv = {}
-local envpath
 
-function _split(str, symb)
+function _split(str, symbol)
     local parts = {}
-    for m in string.gmatch(str, "([^"..symb.."]+)") do
-       if m ~= "" then
-            table.insert(parts, text.trim(m))
+    for part in string.gmatch(str, "([^"..symbol.."]+)") do
+       if part ~= "" then
+            table.insert(parts, trim(part))
         end
     end
     return parts

@@ -8,6 +8,6 @@ local states = {
 	auth = require('authorization'),
 	menu = require('menu')
 }
-shell.setWorkingDirectory('//home')
+shell.setWorkingDirectory(os.getenv('wd'))
 
 return states
