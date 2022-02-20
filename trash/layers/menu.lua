@@ -32,6 +32,8 @@ function Menu:init(user)
 	function obj:redraw()
 		objects = {}
 
+		local xui = {w=, f=, ...}
+		self.frame:addButton(table.unpack(xui))
 		--Deposit button
 		objects["depositButton"] = self.frame:addButton(3,22,"Пополнить (23)", 
 			function(self)

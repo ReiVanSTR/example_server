@@ -121,14 +121,15 @@ end
 ----------------------------------------------------------------
 
 local authLayer = Auth:init() 
+
 authLayer:redraw()
-function draw()
+local function draw()
 	authLayer:redraw() 
 	authLayer:run()
 end
 
 
-fms = machine.create({
+local fms = machine.create({
 	initial = 'auth',
 
 	events = {
@@ -137,14 +138,14 @@ fms = machine.create({
 		{ name = 'exit', from = 'menu', to = 'auth' },
 	},
 	callbacks = {
-		onauth = draw(),
-		onmenu = forms.run(menuFrame),
-		onauthmenu = draw(),
-		onexit = forms.run(menuFrame)
+		onbeforeauthmenu = draw(),
+		onbeforeexit = forms.run(menuFrame)
 	}
 })
 
 -- fms.onstatechange = function(self, event, from, to) print(event, from, to) end
+
 fms:startup()
 
 print(fms.current)
+fms:startup()
