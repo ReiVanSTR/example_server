@@ -6,6 +6,8 @@ luac.out
 *.zip
 *.tar.gz
 .env
+test.lua
+func.lua
 
 # Object files
 *.o

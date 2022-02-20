@@ -1,5 +1,4 @@
--- local shell = require('shell')
+--data/config
+local config = {}
 
--- local meta = loadfile(shell.getWorkingDirectory()..'/authorization/meta.lua')()
-
-return 'config'
+return config
