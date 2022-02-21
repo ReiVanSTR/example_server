@@ -1,6 +1,6 @@
-local obj = {
+local data = {
 	user = {},
-	passwd = '123'
+	storage = {}
 }
 
-return obj
+return data
